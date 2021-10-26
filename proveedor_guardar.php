@@ -1,4 +1,4 @@
-<?php
+<?php //guarda datos del provedor
 include 'inc/conexion.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nombre_del_proveedor_post = strtoupper($_POST['nombre_del_proveedor']);
