@@ -7,13 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $telefono_2_post = strtoupper($_POST['telefono_2']);
     $correo_proveedor_post = strtoupper($_POST['correo_proveedor']);
     $id_proveedor='';
-    $ins=$con->prepare("INSERT INTO proveedor VALUES(?,?,?,?,?,?)");
+    $ins=$con->prepare("INSERT INTO comprador VALUES(?,?,?,?,?,?)");
     $ins->bind_param("isssss",$id,$nombre_del_proveedor_post,$direccion_del_proveedor_post,$telefono_1_post,$telefono_2_post,$correo_proveedor_post);
     if($ins->execute()){
-        echo "Se ha registrado el proveedor";
+        header("Location: alerta.php?tipo=exito&operacion=Proveedor Guardado&destino=proveedor_registrar.php");
     }
     else{
-        echo "Error al insertar Proveedor";
+        header("Location: alerta.php?tipo=fracaso&operacion=Proveedor No Guardado&destino=proveedor_registrar.php");
     }
     $ins->close();
     $con->close();

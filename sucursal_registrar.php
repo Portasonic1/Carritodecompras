@@ -31,9 +31,9 @@
                         DATOS DE LA SUCURSAL
                     </div>
                     <div class="form-group">
-                        <label for="nombre_proveedor">Selecciona un Vendedor (requerido)</label>
+                        <label for="nombre_proveedor">Selecciona un vendedor (requerido)</label>
                         <br>
-                        <select class="selectpicker" name="proveedor_id">
+                        <select class="selectpicker" name="vendedor_id">
                             <?php while ($f = $res->fetch_assoc()) { ?>
                                 <option value="<?php echo $f['vendedor_id'] ?>"><?php echo $f['vendedor_nombre'] ?>
                                 </option>

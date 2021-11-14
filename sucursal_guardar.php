@@ -1,7 +1,7 @@
 <?php
 include 'inc/conexion.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id_del_proveedor_post = strtoupper($_POST['proveedor_id']);
+    $id_del_proveedor_post = strtoupper($_POST['comprador_id']);
     $nombre_sucursal = strtoupper($_POST['nombre_sucursal']);
     $direccion_sucursal = strtoupper($_POST['direccion_sucursal']);
     $telefono_1 = strtoupper($_POST['telefono_1']);
