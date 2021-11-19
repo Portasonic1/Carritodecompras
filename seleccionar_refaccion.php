@@ -21,7 +21,7 @@
             <div class="jumbotron">
                 <h2>Selecciona una refaccion para agregarle un nuevo precio</h2>
                 <?php
-                $sel = $con->prepare("SELECT *from refaccion");
+                $sel = $con->prepare("SELECT *from producto");
                 $sel->execute();
                 $res = $sel->get_result();
                 ?>
@@ -31,6 +31,7 @@
                     <th>Marca</th>
                     <th>Nombre de la refaccion</th>
                     <th>Descripcion de la refaccion</th>
+                    <th>imagen</th>
                     <th>Clic para seleccionar</th>
                     </thead>
                     <tfoot>
@@ -38,22 +39,26 @@
                     <th>Marca</th>
                     <th>Nombre de la refaccion</th>
                     <th>Descripcion de la refaccion</th>
+                    <th>imagen</th>
                     <th>Clic para seleccionar</th>
                     </tfoot>
                     <tbody>
                         <?php while ($f = $res->fetch_assoc()) { ?>
                             <tr>
                                 <td>
-                                    <?php echo $f['refaccion_id'] ?>
+                                    <?php echo $f['producto_id'] ?>
                                 </td>
                                 <td>
                                     <?php echo $f['marca_id'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $f['refaccion_nombre'] ?>
+                                    <?php echo $f['producto_nombre'] ?>
                                 </td>
                                 <td>
-                                    <?php echo $f['refaccion_descripcion'] ?>
+                                    <?php echo $f['producto_descripcion'] ?>
+                                </td>
+                                <td>
+                                    <img class="img-fluid" src="<?php echo $f['producto_imagen'] ?>"/>
                                 </td>
                                 <td>
                                     <a href="refacciones_cotizar.php?refaccion_id=<?php echo $f['refaccion_id'] ?>&refaccion_nombre=<?php echo $f['refaccion_nombre'] ?>">Seleccionar</a>
