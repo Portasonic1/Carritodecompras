@@ -5,11 +5,11 @@ $refaccion_id = "";
 $marca_id_post = $_POST['marca_id'];
 $nombre_refaccion_post = strtoupper($_POST['nombre_de_refaccion']);
 $descripcion_refaccion_post = strtoupper($_POST['descripcion_de_refeccion']);
-$precio = strtoupper($_POST['precio']);
+$precio = ($_POST['precio']);
 $refaccion_imagen = "imagenes_refacciones/default.jpg";
 
 $sel = $con->prepare("SELECT producto_id,marca_id,producto_nombre,precio FROM producto where marca_id=? AND producto_nombre=?");
-$sel->bind_param('is', $marca_id_post, $nombre_refaccion_post, $precio);
+$sel->bind_param('is', $marca_id_post, $nombre_refaccion_post);
 $sel->execute();
 $res = $sel->get_result();
 $row = mysqli_num_rows($res);
@@ -21,7 +21,7 @@ if ($row != 0) {
     echo "<a href=\"index_refacciones.php\" class=\"btn btn-default\" role=\"button\"> CANCELAR </a>";
 } else {
     $ins = $con->prepare("INSERT INTO producto VALUES(?,?,?,?,?,?)");
-    $ins->bind_param("iisss", $id, $marca_id_post, $nombre_refaccion_post, $descripcion_refaccion_post, $precio, $refaccion_imagen);
+    $ins->bind_param("iissss", $id, $marca_id_post, $nombre_refaccion_post, $descripcion_refaccion_post, $precio_post, $refaccion_imagen);
     if ($ins->execute()) {
 //SUBIR LA IMAGEN
         $ultimo_id = "noWhile";
