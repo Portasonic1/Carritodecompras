@@ -19,7 +19,7 @@
         <!--termina código que incluye el menú responsivo-->
         <div class="container">
             <div class="jumbotron">
-                <h2>Selecciona una refaccion para agregarle un nuevo precio</h2>
+                <h2>Lista de productos</h2>
                 <?php
                 $sel = $con->prepare("SELECT *from producto");
                 $sel->execute();
@@ -27,22 +27,21 @@
                 ?>
                 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
-                    <th>Id Refaccion</th>
+                    <th>Id Producto</th>
                     <th>Marca</th>
-                    <th>Nombre de la refaccion</th>
-                    <th>Descripcion de la refaccion</th>
+                    <th>Nombre del producto</th>
+                    <th>Descripcion del producto</th>
                     <th>imagen</th>
                     <th>precio</th>
-                    <th>Clic para seleccionar</th>
+                    
                     </thead>
                     <tfoot>
-                    <th>Id Refaccion</th>
+                    <th>Id Producto</th>
                     <th>Marca</th>
-                    <th>Nombre de la refaccion</th>
-                    <th>Descripcion de la refaccion</th>
+                    <th>Nombre del producto</th>
+                    <th>Descripcion del producto</th>
                     <th>imagen</th>
-                    <th>precio</th>
-                    <th>Clic para seleccionar</th>
+                    <th>precio</th>                   
                     </tfoot>
                     <tbody>
                         <?php while ($f = $res->fetch_assoc()) { ?>
@@ -59,15 +58,15 @@
                                 <td>
                                     <?php echo $f['producto_descripcion'] ?>
                                 </td>
-                                <td>
-                                    <img class="img-fluid" width="200" height="200" src="<?php echo $f['producto_imagen'] ?>"/>
+                                <td>                               <a href="<?php echo $f['producto_imagen'] ?>"> 
+
+                                    <img class="img-fluid" width="200" height="200" src="<?php echo $f['producto_imagen'] ?>" />
+                                </a> 
                                 </td>
                                 <td>
                                     <?php echo $f['precio'] ?>
                                 </td>
-                                <td>
-                                    <a href="refacciones_cotizar.php?refaccion_id=<?php echo $f['refaccion_id'] ?>&refaccion_nombre=<?php echo $f['refaccion_nombre'] ?>">Seleccionar</a>
-                                </td>
+                                
                             </tr>
                             <?php
                         }
