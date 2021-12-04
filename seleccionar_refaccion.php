@@ -60,7 +60,7 @@
                                 </td>
                                 <td>                               <a href="<?php echo $f['producto_imagen'] ?>"> 
 
-                                    <img class="img-fluid" width="200" height="200" src="<?php echo $f['producto_imagen'] ?>" />
+                                    <img class="img-responsive" width="200" height="200" src="<?php echo $f['producto_imagen'] ?>" />
                                 </a> 
                                 </td>
                                 <td>
