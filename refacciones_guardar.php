@@ -8,8 +8,8 @@ $descripcion_refaccion_post = strtoupper($_POST['descripcion_de_refeccion']);
 $precio = ($_POST['precio']);
 $refaccion_imagen = "imagenes_refacciones/default.jpg";
 
-$sel = $con->prepare("SELECT producto_id,marca_id,producto_nombre,precio FROM producto where marca_id=? AND producto_nombre=? AND precio=?");
-$sel->bind_param('iss', $marca_id_post, $nombre_refaccion_post, $precio);
+$sel = $con->prepare("SELECT producto_id,marca_id,producto_nombre,producto_descripcion,precio FROM producto where marca_id=? AND producto_nombre=? AND producto_descripcion=? AND precio=?");
+$sel->bind_param('isss', $marca_id_post, $nombre_refaccion_post, $descripcion_refaccion_post, $precio);
 $sel->execute();
 $res = $sel->get_result();
 $row = mysqli_num_rows($res);
