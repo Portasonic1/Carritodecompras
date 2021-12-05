@@ -26,22 +26,22 @@ $nombre_marca_seleccionada = $_GET['marca_nombre'];
                       method="post" class="form-signin" action="refacciones_guardar.php">
                     
                     <div class="h2">
-                        Detalles de la refacci&oacute;n
+                        Detalles del producto
                     </div>
 
                     <div class="form-group">
-                        <label>ID de la marca seleccionada (<?php echo $nombre_marca_seleccionada ?>)</label>
+                        <label>ID del roducto seleccionado (<?php echo $nombre_marca_seleccionada ?>)</label>
                         <input type="text" id="marca_id" class="form-control" name="marca_id" value="<?php echo $id_marca_seleccionada ?>" readonly="" 
                                placeholder="<?php echo $nombre_marca_seleccionada ?>">
                     </div>
 
                     <div class="form-group">
-                        <label>Nombre de la refacci&oacute;n (requerido)</label>
+                        <label>Nombre del producto (requerido)</label>
                         <input type="text" class="form-control" id="nombre_de_refaccion" name="nombre_de_refaccion"
                                placeholder="Ingresa nombre de la refacci&oacute;n" style="text-transform:uppercase;" required>
                     </div>
                     <div class="form-group">
-                        <label>Descripci&oacute;n de la refacci&oacute;n</label>
+                        <label>Descripcion del producto</label>
                         <input type="text" class="form-control" id="descripcion_de_refaccion" name="descripcion_de_refaccion"
                                placeholder="Ingresa descripci&oacute;n de esta refacci&oacute;n" style="text-transform:uppercase;">
                     </div>
